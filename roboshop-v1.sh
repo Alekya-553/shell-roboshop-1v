@@ -32,7 +32,7 @@ do
          IP=$( aws ec2 describe-instances --instance-ids $instance_id \
                --query 'Reservations[].Insances[].PublicIpAddress' --output text
          )
-         r53_record="$(instance}.${domain_name}"
+         r53_record="${instance}.${domain_name}"
          I 
 
 done
