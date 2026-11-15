@@ -7,7 +7,9 @@ hosted_zone_id="Z00935121F2I3EKC44I96"
 
 for instance in $@
 do 
+
     echo "Creating instance: $instance"
+    
     instance_id=$(aws ec2 run-instances \
               --image-id $ami_id \
               --instance-type $instance_type \
@@ -16,7 +18,6 @@ do
               --query 'Instances[0].InstanceId' \
               --output text
     )
-     
     echo "$instance instance ID: $instance_id"
 
 done
