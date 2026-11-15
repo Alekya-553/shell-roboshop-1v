@@ -22,12 +22,12 @@ timestamp(){
 validate(){
        if [ $1 -ne 0 ]; then
 
-          echo "$(timestamp) [ERROR] ${2}..${R}FAILED${N}" | tee -a &>> $logs_file
+          echo -e "$(timestamp) [ERROR] ${2}..${R}FAILED${N}" | tee -a &>> $logs_file
           exit 1
 
         else 
            
-           echo "$(timestamp) [INFO] ${2}..${G}SUCCESS${N}" | tee -a $logs_file
+           echo -e "$(timestamp) [INFO] ${2}..${G}SUCCESS${N}" | tee -a $logs_file
 
         fi
 }
