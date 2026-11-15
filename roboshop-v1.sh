@@ -30,10 +30,9 @@ do
     else
         
            IP=$( aws ec2 describe-instances --instance-ids $instance_id \
-               --query 'Reservations[].Insances[].PublicIpAddress' --output text
+                  --query 'Reservations[].Instances[].PublicIpAddress' --output text
             )
             r53_record="${instance}.${domain_name}"
     
-    fi
-         I 
+    fi     I 
 done
