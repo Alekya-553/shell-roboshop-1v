@@ -1,6 +1,6 @@
 #!/bin/bash
 
-user_id="$(id -u)
+user_id="$(id -u)"
 logs_folder="/var/log/roboshop"
 logs_file="${logs_folder}/${0}.log"
 R="\e[31m"
@@ -47,4 +47,3 @@ validate $? "Setup MySQL root password"
 
 echo "$(timestamp) [INFO] Script completed in $SECONDS seconds"
 echo "$(timestamp) [INFO] ======== Script completed Execution =====" | tee -a $logs_file
-
