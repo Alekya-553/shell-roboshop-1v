@@ -35,4 +35,24 @@ do
             r53_record="${instance}.${domain_name}"
     
     fi
+
+    # update R53 record
+     
+    echo "Record: ${r53_record}"
+    aws route53 cange-resource-record-sets \
+     --hosted-zone-id $hosted_zone_id \
+     --change-batch '{
+        "Changes": [
+            {
+                "Action": "UPSERT",
+                 "ResourceRecordSet": {
+                      "Name": "'$r53_record'",
+                      "Type": "A",
+                      "TTL": 1,
+                      "ResourceRecords": [{"Value": "'$IP'"}]
+                    }
+            }
+        ]
+    }'
+
 done
