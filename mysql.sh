@@ -27,7 +27,7 @@ validate(){
 
         else 
            
-           echo "$(timestamp) [INFO] ${2}..${G}SUCCESS${N}" | tee -a &>> $logs_file
+           echo "$(timestamp) [INFO] ${2}..${G}SUCCESS${N}" | tee -a $logs_file
 
         fi
 }
@@ -46,5 +46,5 @@ mysql_secure_installation --set-root-pass RoboShop@1  &>> $logs_file
 validate $? "Setup MySQL root password"
 
 echo "$(timestamp) [INFO] Script completed in $SECONDS seconds"
-echo "$(timestamp) [INFO] ==== Script completed Execution =====" | tee -a $logs_file
+echo "$(timestamp) [INFO] ======== Script completed Execution =====" | tee -a $logs_file
 
