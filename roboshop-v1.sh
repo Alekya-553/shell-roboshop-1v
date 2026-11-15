@@ -34,5 +34,5 @@ do
             )
             r53_record="${instance}.${domain_name}"
     
-    fi     I 
+    fi
 done
